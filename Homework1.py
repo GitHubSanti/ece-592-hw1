@@ -11,7 +11,8 @@ def pyramid(s):
 
 def findSquares(s:int = 0, e:int = 0):
         """          
-        Print numbers which are exact squares of an integer within range of two integers
+        Print numbers which are exact squares of an integer within range of two integers.
+        Return list of numbers that perfect squares.
         """
         squares = []
         if s > e:
@@ -31,10 +32,21 @@ def findSquares(s:int = 0, e:int = 0):
         print(squares)
         return squares
 
-def calSalary(hours,r):
+def calSalary(h:float,r:float = 20):
         """
-
+        Return the salary in float. h is number of hours and r is the hourly rate.
+        If the rate is not specified use the default rate to be $20 / hour.
+        If the hours are less than zero print("Not valid Hours") and return -1.
         """
+        if h < 0:
+                print("Not valid Hours")
+                return -1
+        elif h >= 0 and h <= 40:
+                salary = h*r
+                return salary
+        else:
+                salary = 40*r + (h-40)*(r*1.2)
+                return salary
 
 def calLetterGrade(points,gradescale):
         """
