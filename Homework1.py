@@ -23,7 +23,7 @@ def findSquares(s:int = 0, e:int = 0):
         else:
                         square_root = str(math.sqrt(s)).split('.')
                         if square_root[1] == '0':
-                                squares.append(num)
+                                squares.append(s)
         print(squares)
         return squares
 
