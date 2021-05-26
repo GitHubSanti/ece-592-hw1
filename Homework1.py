@@ -1,31 +1,31 @@
+import math
+
 def pyramid(s):
         """
 
         """
 
-def findSquares(s:int = 0, e:int):
+def findSquares(s:int = 0, e:int = 0):
         """          
-
+        Print numbers which are exact squares of an integer within range of two integers
         """
         squares = []
         if s > e:
-                pass                                
+                for num in range(e,s+1):
+                        square_root = str(math.sqrt(num)).split('.')
+                        if square_root[1] == '0':
+                                squares.append(num)
         elif s < e:
-                pass
+                for num in range(s,e+1):
+                        square_root = str(math.sqrt(num)).split('.')
+                        if square_root[1] == '0':
+                                squares.append(num)
         else:
-                pass
-
-#         for i in range(8,26):
-#     x = math.sqrt(i)
-#     # print(str(x).split('.'))
-#     if str(x).split('.')[1] == '0':
-#         # print(x,'is a square')
-#         print(i,'is a square')
-#     else:
-#         # print(x,'is not a square')
-#         print(i,'is not a square')
-
-
+                        square_root = str(math.sqrt(s)).split('.')
+                        if square_root[1] == '0':
+                                squares.append(num)
+        print(squares)
+        return squares
 
 def calSalary(hours,r):
         """
