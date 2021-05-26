@@ -51,7 +51,62 @@ def calSalary(h:float,r:float = 20):
                 salary = 40*r + (h-40)*(r*1.2)
                 return salary
 
-def calLetterGrade(points,gradescale):
+def calLetterGrade(points: float, gradescale: list = [98,94,91,88,85,82,79,76,73,70,67,64]):
+        """
+        Calculates letter grade based on the points and the gradescale argument.
         """
 
-        """
+        # ensure points parameter is a float
+        try:
+                float(points)
+        except ValueError:
+                return -1
+        # ensure gradescale is only 12 members long or less
+        if len(gradescale) > 12:
+                return -1
+        # ensure every member of gradescale list is float
+        for member in gradescale:
+                try:
+                        float(member)
+                except ValueError:
+                        return -1
+        # automatically assign grade of F if negative points
+        if points < 0:
+                return "F"
+        # check for repeat entry in gradescale
+        for member in gradescale:
+                if gradescale.count(float(member)) > 1:
+                        print("Gradescale has repeat entry.")
+                        return -1
+        # assign grade based on points and gradescale
+        index = 0
+        while index < len(gradescale):
+                if points >= gradescale[index] and index == 0:
+                        return "A+"
+                if points >= gradescale[index] and index == 1:
+                        return "A"
+                if points >= gradescale[index] and index == 2:
+                        return "A-"
+                if points >= gradescale[index] and index == 3:
+                        return "B+"
+                if points >= gradescale[index] and index == 4:
+                        return "B"
+                if points >= gradescale[index] and index == 5:
+                        return "B-"
+                if points >= gradescale[index] and index == 6:
+                        return "C+"
+                if points >= gradescale[index] and index == 7:
+                        return "C"
+                if points >= gradescale[index] and index == 8:
+                        return "C-"
+                if points >= gradescale[index] and index == 9:
+                        return "D+"
+                if points >= gradescale[index] and index == 10:
+                        return "D"
+                if points >= gradescale[index] and index == 11:
+                        return "D-"
+                if points < gradescale[index] and index == 11:
+                        return "F"
+                index += 1
+        return "F"
+                                
