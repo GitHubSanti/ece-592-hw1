@@ -2,8 +2,12 @@ import math
 
 def pyramid(s):
         """
-
+        Prints a “message pyramid” for the input message string starting from the first character in the string.
         """
+        pyramid = ''
+        for letter in s:
+                pyramid += letter
+                print(pyramid)
 
 def findSquares(s:int = 0, e:int = 0):
         """          
