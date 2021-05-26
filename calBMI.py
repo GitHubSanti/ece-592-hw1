@@ -11,14 +11,8 @@ Output should look like
 """  
 
 if __name__ == "__main__":    
-    import sys
-    # Check to see if we have the right number inputs
-    if len(sys.argv) != 3:
-        print("Incorrect number of inputs")
-        exit(-1)
-
-    weight = sys.argv[1]
-    height = sys.argv[2]
+    weight = input("please provide weight in lbs: ")
+    height = input("please provide height in feet: ")
 
     # Ensure string inputs for weight and height are floats or integers
     try:
