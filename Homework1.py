@@ -14,6 +14,9 @@ def findSquares(s:int = 0, e:int = 0):
         Print numbers which are exact squares of an integer within range of two integers.
         Return list of numbers that perfect squares.
         """
+        # check to see if either input is negative and return error message
+        if s < 0 or  e < 0:
+                return "Invalid Input. Unable to take square root of negative number."
         squares = []
         if s > e:
                 for num in range(e,s+1):
