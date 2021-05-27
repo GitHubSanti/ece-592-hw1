@@ -56,6 +56,10 @@ def calSalary(h:float,r:float = 20):
         If the rate is not specified use the default rate to be $20 / hour.
         If the hours are less than zero print("Not valid Hours") and return -1.
         """
+        # ensure hours or pay rate is not boolean
+        if isinstance(h,bool) or isinstance(r,bool):
+                print("Hours and/or pay rate cannot be a boolean.")
+                return -1
         # if less than 0 hours
         if h < 0:
                 print("Not valid Hours")
