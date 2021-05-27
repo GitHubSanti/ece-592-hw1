@@ -55,7 +55,9 @@ def calLetterGrade(points: float, gradescale: list = [98,94,91,88,85,82,79,76,73
         """
         Calculates letter grade based on the points and the gradescale argument.
         """
-
+        # ensure points are not boolean
+        if isinstance(points,bool):
+                return -1
         # ensure points parameter is a float
         try:
                 float(points)
@@ -66,6 +68,9 @@ def calLetterGrade(points: float, gradescale: list = [98,94,91,88,85,82,79,76,73
                 return -1
         # ensure every member of gradescale list is float
         for member in gradescale:
+                # ensure points are not boolean
+                if isinstance(member,bool):
+                        return -1
                 try:
                         float(member)
                 except ValueError:
