@@ -1,10 +1,22 @@
+"""
+@author Santiago Sepulveda
+
+Following script contains following functions:
+
+pyramid
+findSquares
+calSalary
+calLetterGrade
+
+"""
+
 import math
 
 def pyramid(s):
         """
-        Prints a “message pyramid” for the input message string starting from the first character in the string.
+        Print a “message pyramid” for the input message string starting from the first character in the string.
         """
-        pyramid = ''
+        pyramid = ""
         for letter in s:
                 pyramid += letter
                 print(pyramid)
@@ -18,16 +30,19 @@ def findSquares(s:int = 0, e:int = 0):
         if s < 0 or  e < 0:
                 return "Invalid Input. Unable to take square root of negative number."
         squares = []
+        # if first parameter is larger than second
         if s > e:
                 for num in range(e,s+1):
                         square_root = str(math.sqrt(num)).split('.')
                         if square_root[1] == '0':
                                 squares.append(num)
+        # if second parameter is larger than first
         elif s < e:
                 for num in range(s,e+1):
                         square_root = str(math.sqrt(num)).split('.')
                         if square_root[1] == '0':
                                 squares.append(num)
+        # if parameters are the same 
         else:
                         square_root = str(math.sqrt(s)).split('.')
                         if square_root[1] == '0':
@@ -41,12 +56,15 @@ def calSalary(h:float,r:float = 20):
         If the rate is not specified use the default rate to be $20 / hour.
         If the hours are less than zero print("Not valid Hours") and return -1.
         """
+        # if less than 0 hours
         if h < 0:
                 print("Not valid Hours")
                 return -1
+        # if more than but less than 41 hours
         elif h >= 0 and h <= 40:
                 salary = h*r
                 return salary
+        # takes overtime into consideration
         else:
                 salary = 40*r + (h-40)*(r*1.2)
                 return salary
